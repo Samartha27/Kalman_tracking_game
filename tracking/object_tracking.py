@@ -11,11 +11,11 @@ from kalman_filter import KalmanFilter
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_dir", help="Input the video directory")
+    parser.add_argument("--video_path", help="Input the path to video")
     args = parser.parse_args()
 
-    if args.input_dir:
-        video_dir = args.input_dir
+    if args.video_path:
+        video_dir = args.video_path
     else:
         video_dir = './data/jumping_ball.mp4'
 
