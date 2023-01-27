@@ -13,7 +13,7 @@ def main():
     if args.input_dir:
         video_dir = args.input_dir
     else:
-        video_dir = './data/randomball.mp4'
+        video_dir = './data/jumping_ball.mp4'
 
     cap = cv2.VideoCapture(video_dir)
 
