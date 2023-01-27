@@ -1,8 +1,9 @@
 import numpy as np
 import cv2
+import argparse
 from detector import detect
 from kalman_filter import KalmanFilter
-import argparse
+
 
 def main():
 
