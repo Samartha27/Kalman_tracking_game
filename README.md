@@ -4,7 +4,7 @@
 This repository performs detection and object tracking of a ball jumping around in a plane with the help of Kalman estimation. 
 
 ## Implementation
-`python object_tracking.py --input_dir`
+`python object_tracking.py --video_path`
 
 
 ## Sample output:
