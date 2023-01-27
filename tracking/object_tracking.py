@@ -43,7 +43,7 @@ def main():
 
             #cv2.putText(frame, "Kalman a priori", (int(x + 15), int(y)), 0, 0.5, (255, 0, 0), 2)
             cv2.putText(frame, "Kalman a posteriori estimate ", (int(x1 + 15), int(y1 + 10)), 0, 0.5, (0, 0, 255), 2)
-            cv2.putText(frame, "Detected Position", (int(centers[0][0] + 15), int(centers[0][1] - 15)), 0, 0.5, (0,255,0), 2)
+            cv2.putText(frame, "Detected Position", (int(centers[0][0] + 15), int(centers[0][1] - 15)), 0, 0.5, (0,0,0), 2)
 
 
         cv2.imshow('image', frame)
