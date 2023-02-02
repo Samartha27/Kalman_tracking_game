@@ -7,11 +7,11 @@ import argparse
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_dir", help="Input the video directory")
+    parser.add_argument("--video_path", help="Input the video directory")
     args = parser.parse_args()
 
     if args.input_dir:
-        video_dir = args.input_dir
+        video_dir = args.video_path
     else:
         video_dir = '../data/jumping_ball.mp4'
 
