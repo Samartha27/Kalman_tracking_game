@@ -10,7 +10,7 @@ def main():
     parser.add_argument("--video_path", help="Input the video directory")
     args = parser.parse_args()
 
-    if args.input_dir:
+    if args.video_path:
         video_dir = args.video_path
     else:
         video_dir = '../data/jumping_ball.mp4'
