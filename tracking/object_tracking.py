@@ -25,7 +25,7 @@ def main():
     frame_height = int(cap.get(4))
     size = (frame_width, frame_height)
 
-    result = cv2.VideoWriter('./result/output.avi', 
+    result = cv2.VideoWriter('../demo/output.avi', 
                          cv2.VideoWriter_fourcc(*'MJPG'),
                          32, size)
 
