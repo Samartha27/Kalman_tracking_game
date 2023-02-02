@@ -1,21 +1,17 @@
-"SORT"
-
-
 import numpy as np
 import cv2
-import argparse
 from detector import detect
 from kalman_filter import KalmanFilter
-
+import argparse
 
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--video_path", help="Input the path to video")
+    parser.add_argument("--input_dir", help="Input the video directory")
     args = parser.parse_args()
 
-    if args.video_path:
-        video_dir = args.video_path
+    if args.input_dir:
+        video_dir = args.input_dir
     else:
         video_dir = './data/jumping_ball.mp4'
 
@@ -24,6 +20,14 @@ def main():
     KF = KalmanFilter(0.1, 1, 1, 1, 0.1,0.1) #(dt,u_x,u_y,sigma_a,sigma_x,sigma_y)
 
     debugMode=1
+
+    frame_width = int(cap.get(3))
+    frame_height = int(cap.get(4))
+    size = (frame_width, frame_height)
+
+    result = cv2.VideoWriter('output.avi', 
+                         cv2.VideoWriter_fourcc(*'MJPG'),
+                         32, size)
 
     while True:
         
@@ -49,10 +53,11 @@ def main():
             cv2.putText(frame, "Kalman a posteriori estimate ", (int(x1 + 15), int(y1 + 10)), 0, 0.5, (0, 0, 255), 2)
             cv2.putText(frame, "Detected Position", (int(centers[0][0] + 15), int(centers[0][1] - 15)), 0, 0.5, (0,0,0), 2)
 
-
+        result.write(frame)
         cv2.imshow('image', frame)
 
         if cv2.waitKey(2) & 0xFF == ord('q'):
+            result.release()
             cap.release()
             cv2.destroyAllWindows()
             break
