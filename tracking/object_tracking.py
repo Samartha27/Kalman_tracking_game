@@ -13,7 +13,7 @@ def main():
     if args.input_dir:
         video_dir = args.input_dir
     else:
-        video_dir = './data/jumping_ball.mp4'
+        video_dir = '../data/jumping_ball.mp4'
 
     cap = cv2.VideoCapture(video_dir)
 
@@ -25,7 +25,7 @@ def main():
     frame_height = int(cap.get(4))
     size = (frame_width, frame_height)
 
-    result = cv2.VideoWriter('output.avi', 
+    result = cv2.VideoWriter('./result/output.avi', 
                          cv2.VideoWriter_fourcc(*'MJPG'),
                          32, size)
 
